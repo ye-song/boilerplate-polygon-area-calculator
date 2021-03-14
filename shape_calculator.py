@@ -1,10 +1,13 @@
 class Rectangle:
     width = 0
     height = 0
-
+    
     def __init__(self, w, h):
         self.width = w
         self.height = h
+    
+    def __str__(self):
+        return "Rectangle(width=" + str(self.width) + ", height=" + str(self.height) +")"
 
     def set_width(self, w):
         self.width = w
@@ -37,7 +40,12 @@ class Rectangle:
 class Square(Rectangle):
 
     def __init__(self, l):
-        super().__init__(l, l)
+        super(Rectangle, self).__init__()
+        self.width = l
+        self.height = l
+
+    def __str__(self):
+        return "Square(side=" + str(self.width) + ")"
 
     def set_side(self, l):
         self.set_width(l)
