@@ -31,10 +31,18 @@ class Rectangle:
         if self.width > 50 or self.height > 50:
             return "Too big for picture."
         else:
-            for i in range (self.height + 1):
-                return ("*" * (self.width + 1))
+            i = (("*"*(self.width)+'\n')*self.height)
+            return (i)
     
-    #def get_amount_inside (self):
+    def get_amount_inside (self, shape):
+        Shape_Area = shape.get_area()
+        Fitting_Area = self.get_area()
+        i = 0
+        while Fitting_Area>=Shape_Area:
+            Fitting_Area = Fitting_Area-Shape_Area
+            i=i+1
+        return i 
+
 
 
 class Square(Rectangle):
